@@ -1,4 +1,4 @@
-package Basics;
+package day_one.before_and_different_assertion_types;
 
 public class Basics {
     public int compare(int n1, int n2) {

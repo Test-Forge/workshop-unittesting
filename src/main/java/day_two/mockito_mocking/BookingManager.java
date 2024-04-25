@@ -1,4 +1,4 @@
-package BookHotelRoom;
+package day_two.mockito_mocking;
 
 import java.sql.SQLException;
 import java.util.List;

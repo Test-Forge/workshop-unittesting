@@ -1,4 +1,4 @@
-package BookHotelRoom;
+package day_two.mockito_mocking;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,3 +21,4 @@ public class HotelDao {
         return availableRooms;
     }
 }
+
