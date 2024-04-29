@@ -14,6 +14,8 @@ public class ZooKeeper {
 
     @Override
     public String toString() {
-        return STR."ZooKeeper{name='\{name}\{'\''}\{'}'}";
+        return "ZooKeeper{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

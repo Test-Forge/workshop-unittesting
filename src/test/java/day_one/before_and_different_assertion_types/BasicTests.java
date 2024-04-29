@@ -16,21 +16,29 @@ public class BasicTests {
         basicTests = new Basics();
     }
     @Test
-    public void compare() {
-        int value = basicTests.compare(2, 1);
-        assertEquals(1, value);
+    public void compareOneAndTwo() {
+        // given
+        int a = 1;
+        int b = 2;
+        int expectedResult = 1;
+
+        //when
+        int value = basicTests.compare(b, a);
+
+        // then
+        assertEquals(expectedResult, value);
     }
 
     @Test
     @DisplayName("First number is less than the second")
-    public void compare2() {
+    public void compareTwoAndThree() {
         int value = basicTests.compare(2, 3);
         assertEquals(-1, value);
     }
 
     @Test
     @DisplayName("First number is equal to the second")
-    public void compare3() {
+    public void compareTwoAndTwo() {
         int value = basicTests.compare(2, 2);
         assertEquals(0, value);
     }

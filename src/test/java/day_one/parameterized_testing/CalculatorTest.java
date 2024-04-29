@@ -2,6 +2,7 @@ package day_one.parameterized_testing;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -13,12 +14,10 @@ class CalculatorTest {
     Calculator calculator = new Calculator();
 
     // Expected values
-
-    @Test
-    public void squaredIntegerHappyPath() {
-
-        assertEquals(9, calculator.squareInteger(3));
-        assertEquals(100, calculator.squareInteger(10));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/square_integer_test_data.csv", useHeadersInDisplayName = true)
+    public void squaredIntegerHappyPath(int sqrResult, int inputData) {
+        assertEquals(sqrResult, calculator.squareInteger(inputData));
     }
 
     // Boundary values
@@ -37,6 +36,11 @@ class CalculatorTest {
     })
     public void squareIntegerValidBoundaryTest(int inputValue, int expectedOutput) {
         assertEquals(expectedOutput, calculator.squareInteger(inputValue));
+    }
+
+    @Test
+    public void squareIntegerValidBoundaryTestNullInput() {
+        assertEquals(0, calculator.squareInteger(null));
     }
 
 }

@@ -39,7 +39,7 @@ class NewsletterSenderTest {
         NewsletterSender newsletterSender = new NewsletterSender(new SubscribersDatabase(), new MessagingEngine());
         NewsletterSender newsletterSenderSpy = spy(newsletterSender);
 
-        when(newsletterSenderSpy.numberOfSubscribers()).thenReturn(0); // 'spy' -> Giving a predefined returns for some of the class methods
+        when(newsletterSenderSpy.numberOfSubscribers()).thenReturn(0); // 'spy' -> Giving predefined returns for some of the class methods
 
         Assertions.assertThrows(ZeroSubscribersException.class, () -> {
             newsletterSenderSpy.sendNewsletter("SUBJECT");

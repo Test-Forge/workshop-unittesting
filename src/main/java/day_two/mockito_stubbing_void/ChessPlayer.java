@@ -15,7 +15,7 @@ public class ChessPlayer {
     }
 
     public void assignCategory() throws Exception{
-        System.out.println(STR."Assigning category for \{this.name}");
+        System.out.println("Assigning category for " + this.name);
 
         if(this.getAge() < 5){
             throw new Exception("Player age too low");
@@ -24,7 +24,7 @@ public class ChessPlayer {
     }
 
     public void assignScoreStats(){
-        System.out.println(STR."Assigning score stats for \{this.name}");
+        System.out.println("Assigning score stats for " + this.name);
 
         //connects to database
         //calculates wins and sets value

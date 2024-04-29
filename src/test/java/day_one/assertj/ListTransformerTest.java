@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class ListTransformerTest {
 
+    // AssertJ provides improved readability compared to JUnit assertions
     private ListTransformer listTransformer;
 
     @BeforeEach

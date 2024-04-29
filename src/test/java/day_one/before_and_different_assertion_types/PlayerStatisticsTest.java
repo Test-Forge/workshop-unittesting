@@ -1,11 +1,18 @@
 package day_one.before_and_different_assertion_types;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PlayerStatisticsTest {
 
@@ -23,6 +30,7 @@ class PlayerStatisticsTest {
     public void playerNameEqual(){
         System.out.println("test 1");
         Player player2 = new Player("Patrick", 25);
+        // assertEquals - checks if two objects are equal in terms of their content.
         assertEquals(player2.getName(), playerPatrickUnderThirty.getName(), "Players should have the same name");
     }
 
@@ -38,10 +46,11 @@ class PlayerStatisticsTest {
     public void youngerPlayerSame(){
         System.out.println("test 3");
         Player player2 = new Player("Patrick", 25);
-        assertEquals(PlayerStatistics.getYoungerPlayer(playerPatrickUnderThirty, player2), player2);
+        // assertSame - checks if two object references point to the exact same object instance in memory
+        assertSame(PlayerStatistics.getYoungerPlayer(playerPatrickUnderThirty, player2), player2);
     }
 
-    @Test
+    @RepeatedTest(value = 8, failureThreshold = 2)
     public void underThirtyTrue(){
         System.out.println("test 4");
         assertTrue(statisticsOfPatrickUnderThirty.underThirty());
