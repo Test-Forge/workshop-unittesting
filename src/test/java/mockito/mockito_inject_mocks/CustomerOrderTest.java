@@ -2,7 +2,9 @@ package mockito.mockito_inject_mocks;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Answers;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -14,6 +16,9 @@ import static org.mockito.Mockito.spy;
 
 @ExtendWith(MockitoExtension.class)
 class CustomerOrderTest {
+
+//    @Mock(answer = Answers.RETURNS_DEFAULTS)
+//    BreakfastWaiter breakfastWaiterMock;
 
     @Spy
     BreakfastWaiter breakfastWaiter;

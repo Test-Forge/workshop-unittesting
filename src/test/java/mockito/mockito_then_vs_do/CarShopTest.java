@@ -12,7 +12,21 @@ import static org.mockito.Mockito.spy;
 class CarShopTest {
 
     @Test
-    public void testCarsInShop() {
+    public void testCarsInShopThenReturn() {
+        CarShop carShopSpy = spy(CarShop.class);
+        Map<String, Integer> carsInStock = new HashMap<>();
+        carsInStock.put("Jaguar", 10);
+
+//        when(carShopSpy.getCarsInStock()).thenReturn(carsInStock); //thenReturn() - has a compile time check on data type; also, method behavior is run in background
+        doReturn(carsInStock).when(carShopSpy).getCarsInStock(); //doReturn() - checks for data type at runtime;
+
+        assertEquals(10, carShopSpy.getStockForBrand("Jaguar"));
+
+        //exceptions / side effects can influence test code with thenReturn()
+    }
+
+    @Test
+    public void testCarsInShopDoReturn() {
         CarShop carShopSpy = spy(CarShop.class);
         Map<String, Integer> carsInStock = new HashMap<>();
         carsInStock.put("Jaguar", 10);
