@@ -10,13 +10,16 @@ import java.util.Objects;
 public class Players {
     private String name;
     private int age;
+    private String sport;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Players player = (Players) o;
-        return age == player.age && Objects.equals(name, player.name);
+        return age == player.age
+                && Objects.equals(name, player.name)
+                && Objects.equals(sport, player.sport);
     }
 
     @Override

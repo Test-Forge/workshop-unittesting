@@ -21,6 +21,7 @@ public class BasicTests {
 
     // test the compare() method for case when 1st number is bigger
     @Test
+    @DisplayName("First number is bigger than the second")
     public void compareTwoAndOne() {
         // given
         int a = 2;
@@ -34,23 +35,41 @@ public class BasicTests {
         assertEquals(expectedValue, actualValue);
     }
 
-    // test the compare() method for case when 1st number is smaller
+    //TODO test the compare() method for case when 1st number is smaller
     @Test
-    @DisplayName("First number is less than the second")
-    public void compareTwoAndThree() {
-        int value = basicTests.compare(2, 3);
-        assertEquals(-1, value);
+    @DisplayName("First number is smaller than the second")
+    public void compareOneAndTwo() {
+        // given
+        int a = 1;
+        int b = 2;
+        int expectedValue = -1;
+
+        //when
+        int actualValue = basicTests.compare(a, b);
+
+        // then
+        assertEquals(expectedValue, actualValue);
     }
 
-    // test the compare() method for case when both numbers are equal
+
+    //TODO test the compare() method for case when both numbers are equal
     @Test
-    @DisplayName("First number is equal to the second")
-    public void compareTwoAndTwo() {
-        int value = basicTests.compare(2, 2);
-        assertEquals(0, value);
+    @DisplayName("Both numbers are equal")
+    public void compareThreeAndThree() {
+        // given
+        int a = 3;
+        int b = 3;
+        int expectedValue = 0;
+
+        //when
+        int actualValue = basicTests.compare(a, b);
+
+        // then
+        assertEquals(expectedValue, actualValue);
     }
 
-    // test the max() method
+
+    // test the max() method on path b
     @Test
     @DisplayName("Array max number")
     public void arrayMax() {
@@ -58,7 +77,16 @@ public class BasicTests {
         assertEquals(9, basicTests.max(array));
     }
 
-    // test the sortArray() method
+    //TODO test the max() method on path a
+    @Test
+    @DisplayName("Array max number with empty array")
+    public void arrayMaxWithZeroLengthArray() {
+        int[] array = {};
+        assertEquals(-1, basicTests.max(array));
+    }
+
+
+    //TODO test the sortArray() method
     @Test
     @DisplayName("Array sorted")
     public void sortArray() {
@@ -67,7 +95,7 @@ public class BasicTests {
         assertArrayEquals(new int[]{1, 3, 5, 6, 8, 9}, array);
     }
 
-    // test the "reverseString()" method
+    //TODO test the "reverseString()" method
     @Test
     public void reverseStringTest() {
         String expectedString = "olleH";
