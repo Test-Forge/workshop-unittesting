@@ -12,24 +12,25 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 // test class to test NewsletterSender.class methods
-@Tag("MocksStubs")
 class NewsletterSenderTest {
 
     // test whether de NewsletterSender class's constructor instantiates a "SubscribersDatabase" object
     @Test
     public void testConstructorAssignsDatabase() {
-        // create a "mocked" version of the MessagingEngine
+        //TODO create a "mocked" version of the MessagingEngine
         // 'mock' -> a mock is a 'nullable' object of a given type
         MessagingEngine messagingEngineMock = mock();
-        // create an actual object of SubscribersDatabase
+        //TODO create an actual object of SubscribersDatabase
         SubscribersDatabase subscribersDatabase = new SubscribersDatabase();
-        // create an actual object of NewsLetterSender passing the SubscribersDatabase object and the MessagingEngine mock
+        //TODO create an actual object of NewsLetterSender
+        // passing the SubscribersDatabase object and the MessagingEngine mock
         NewsletterSender newsletterSender = new NewsletterSender(subscribersDatabase, messagingEngineMock);
-        // validate that SubscribersDatabase object created in the test is the same as the assigned one in NewsLetterSender
+        //TODO validate that SubscribersDatabase object created in the test
+        // is the same as the assigned one in NewsLetterSender
         assertSame(subscribersDatabase, newsletterSender.getSubscribersDatabase());
     }
 
-    // test "numberOfSubscribers()" method
+    //TODO test "numberOfSubscribers()" method
     @Test
     public void numberOfSubscribersEqualsThree() {
         // create a "mocked" version of the SubscribersDatabase
@@ -48,7 +49,7 @@ class NewsletterSenderTest {
         assertEquals(3, sender.numberOfSubscribers(), "Number of subscribers should be: " + 3);
     }
 
-    // test "sendNewsletter()" method on the exception execution path
+    //TODO test "sendNewsletter()" method on the exception execution path
     @Test
     public void zeroSubscribersThrown() {
         // create a NewsletterSender instance

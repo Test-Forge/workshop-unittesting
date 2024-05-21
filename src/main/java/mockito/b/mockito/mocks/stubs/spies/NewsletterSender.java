@@ -30,6 +30,7 @@ public class NewsletterSender {
     }
 
     // Method to be tested
+    // current method uses a method from an external dependency
     public int numberOfSubscribers(){
         return subscribersDatabase.getSubscribers().size();
     }
