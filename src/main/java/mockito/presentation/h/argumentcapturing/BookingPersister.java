@@ -1,4 +1,4 @@
-package mockito.mockito_argument_captor;
+package mockito.presentation.h.argumentcapturing;
 
 public class BookingPersister {
 

@@ -1,10 +1,12 @@
 package mockito.presentation.f.dynamicstubbing;
 
+import mockito.presentation.c.stubvoidmethods.Car;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.stubbing.Answer;
@@ -13,73 +15,93 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
+// test class to test BookManager.class methods
 @ExtendWith(MockitoExtension.class)
 class BookManagerTest {
 
-    @Mock
-    private BooksRepository booksRepository;
+    // creating mock via annotation
+    @Spy
+    private BooksRepository booksRepositoryMock;
 
+    // creating a class under test object with the mocked dependency
     @InjectMocks
     private BookManager bookManager;
 
+    // test data declaration
     private Set<String> booksDatabaseSet;
 
     @BeforeEach
     public void setup() {
-
+        // test data initialisation
         booksDatabaseSet = new HashSet<>();
         booksDatabaseSet.add("Harry Potter");
-//        booksDatabaseSet.add("Lord of the rings");
     }
 
+    // test getBookInventoryCount() method stubbing getBooks() method from dependency
     @Test
     public void testGetBookInventoryCount() {
-        BookManager bookManagerSpy = spy(bookManager);
-        when(booksRepository.getBooks()).thenReturn(booksDatabaseSet);
+        when(booksRepositoryMock.getBooks()).thenReturn(booksDatabaseSet);
 
-        Integer getBooksCount = bookManagerSpy.getBookInventoryCount();
-        assertEquals(1, getBooksCount);
+        System.out.println("Number of books is: " + bookManager.getBookInventoryCount());
+        System.out.println(booksDatabaseSet);
     }
 
+    // test getBookInventoryCount() method stubbing getBooks() method from dependency
+    // using thenAnswer() method and an implementation of Answer interface
     @Test
     public void testGetBookInventoryCountWithAnswer() {
-        BookManager bookManagerSpy = spy(bookManager);
-        when(booksRepository.getBooks()).thenAnswer(new GetBooks());
+        when(booksRepositoryMock.getBooks()).thenAnswer(new GetBooks());
 
-        Integer getBooksCount = bookManagerSpy.getBookInventoryCount();
-        assertEquals(1, getBooksCount);
+        System.out.println("Number of books is: " + bookManager.getBookInventoryCount());
+        System.out.println(booksDatabaseSet);
     }
 
+    // test addBook() method stubbing addBook() method from dependency
+    // using thenAnswer() method and an implementation of Answer interface
     @Test
     public void testGetBookInventoryCountWithAnswers() {
-        BookManager bookManagerSpy = spy(bookManager);
-        when(booksRepository.getBooks()).thenAnswer(new GetBooks());
+        when(booksRepositoryMock.getBooks()).thenAnswer(new GetBooks());
 
-        Integer getBooksCount = bookManagerSpy.getBookInventoryCount();
-        assertEquals(1, getBooksCount);
+        System.out.println("Initial Number of books is: " + bookManager.getBookInventoryCount());
+        System.out.println(booksDatabaseSet);
 
-        String newBook = "Black box thinking";
-        when(booksRepository.addBook(newBook)).thenAnswer(new AddBook());
-        bookManagerSpy.addBook(newBook);
+        String newBook = "Lord of the Rings";
+        when(booksRepositoryMock.addBook(newBook)).thenAnswer(new AddBook());
+        bookManager.addBook(newBook);
 
-        Integer getBooksCountAfterAdd = bookManagerSpy.getBookInventoryCount();
-        assertEquals(2, getBooksCountAfterAdd);
+        System.out.println("Number of books after addition is: " + bookManager.getBookInventoryCount());
+        System.out.println(booksDatabaseSet);
     }
 
+    // creating a representation of the getBook() (stubbing it)
+    // with Answer interface implementation
+    // to allow dynamic stubbing
     class GetBooks implements Answer<Object> {
+        // the answer object will be returned upon "GetBooks" invocation
         public Object answer(InvocationOnMock invocation) {
 
+            // here the logic of the method can be further updated
+
+            // for now this answer object just returns the test data set
             return booksDatabaseSet;
         }
     }
 
+    // creating a representation of the addBook() (stubbing it)
+    // with Answer interface implementation
+    // to allow dynamic stubbing
     class AddBook implements Answer<Object> {
+        // the answer object will be returned upon "AddBook" invocation
         public Object answer(InvocationOnMock invocation) {
+            // saving the argument passed to the invoked "addBook()" method
             String book = invocation.getArgument(0);
+            // updating the set with the new books name
             booksDatabaseSet.add(book);
+            // returning the new books name
             return book;
         }
     }

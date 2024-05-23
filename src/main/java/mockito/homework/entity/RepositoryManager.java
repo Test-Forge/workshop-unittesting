@@ -4,7 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 
 import java.util.List;
-
+// class under test
 public class RepositoryManager {
 
     public static final String GET_ALL_STUDENTS = "SELECT * FROM student_table";

@@ -1,4 +1,4 @@
-package mockito.mockito_arg_matchers;
+package mockito.presentation.i.argumentmatchers;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,24 +15,32 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
+// test class to test BookingService.class methods
 @ExtendWith(MockitoExtension.class)
 class BookingServiceTest {
 
+    // create a BookingPersister spy()
     @Spy
-    BookingRepository bookingRepository;
+    BookingRepository bookingRepositorySpy;
 
+    // creation of a BookingManager instance that contains the dependency
     @InjectMocks
     BookingService bookingService;
 
+    // example test for buyTicket() method
+    // validates that bookSeat() method was called with "any" Ticket
     @Test
     void testBuyTicket() {
         BookingService bookingServiceSpy = spy(bookingService);
         bookingServiceSpy.buyTicket("ABC123");
 
-        verify(bookingServiceSpy).bookSeat(any(Ticket.class)); // any() - is the arg matcher
+        // any() - is the arg matcher
+        verify(bookingServiceSpy).bookSeat(any(Ticket.class));
     }
 
+    // example test for bookSeat() method
+    // instructs getSeats() method to return availableTickets
+    // passing anyString() as method parameter
     @Test
     void testBookSeat() {
         String ticketShowId = "TICKET:ID_1";
@@ -40,7 +48,8 @@ class BookingServiceTest {
 
         List<String> availableTickets = new ArrayList<>();
         availableTickets.add(ticketShowId);
-        when(bookingRepository.getSeats(anyString())).thenReturn(availableTickets); // anyString() - is the arg matcher
+        // anyString() - is the arg matcher
+        when(bookingRepositorySpy.getSeats(anyString())).thenReturn(availableTickets);
 
         assertTrue(bookingService.bookSeat(ticket));
     }

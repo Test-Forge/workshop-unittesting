@@ -1,5 +1,8 @@
-package mockito.mockito_argument_captor;
+package mockito.presentation.h.argumentcapturing;
 
+import lombok.ToString;
+
+@ToString
 public class Booking {
 
     private Table table;

@@ -2,7 +2,7 @@ package mockito.presentation.f.dynamicstubbing;
 
 import java.util.HashSet;
 import java.util.Set;
-
+// external dependency for BookManager.class
 public class BooksRepository {
 
     public Set<String> getBooks(){

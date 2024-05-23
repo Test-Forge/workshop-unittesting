@@ -1,4 +1,4 @@
-package mockito.presentation.e.injectannotations;
+package mockito.homework.injectmocks;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -47,10 +47,5 @@ public class CustomerOrder {
     // method that calls a method from external dependency
     public List<String> meatDinner() {
         return dinnerWaiter.getMeatMenu();
-    }
-
-    // method to test stubbing on current class direct instance
-    public String sayHello() {
-        return "Hello!";
     }
 }

@@ -1,4 +1,4 @@
-package mockito.mockito_verify;
+package mockito.presentation.g.internalmethodscallsverification;
 
 public class PassengerRepository {
 

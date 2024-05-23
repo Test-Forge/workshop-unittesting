@@ -6,9 +6,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Arrays;
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
@@ -24,9 +21,10 @@ class CustomerOrderTest {
 
     // creation of a DinnerWaiter spy()
     @Spy
-    DinnerWaiter dinnerWaiter;
+    DinnerWaiter dinnerWaiterSpy;
 
-    // creation of a CustomerOrder test double that contains both of the dependencies
+    // creation of a CustomerOrder instance that contains both of the dependencies
+    // it returns an object instance, NOT a spy() or a mock()
     @InjectMocks
     CustomerOrder customerOrder;
 
@@ -40,6 +38,30 @@ class CustomerOrderTest {
     @Test
     void meatDinner() {
         System.out.println(customerOrder.meatDinner());
+    }
+
+    // example test for sayHello()
+    @Test
+    void testSayHello() {
+        System.out.println(customerOrder.sayHello());
+    }
+
+    // example test for sayHello() stubbing the method
+    @Test
+    void testSayHelloStubbed() {
+        when(customerOrder.sayHello()).thenReturn("Good bye");
+
+        System.out.println(customerOrder.sayHello());
+    }
+
+    // example test for sayHello() stubbing the method on a spy()
+    @Test
+    void testSayHelloStubbedOnSpy() {
+        CustomerOrder customerOrderSpy = spy(customerOrder);
+
+        when(customerOrderSpy.sayHello()).thenReturn("Good bye");
+
+        System.out.println(customerOrderSpy.sayHello());
     }
 
 }
