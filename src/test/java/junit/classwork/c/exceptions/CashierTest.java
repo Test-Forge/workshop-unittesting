@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 // test class to test Cashier.class methods
 class CashierTest {
 
-    // write a test for "validateTransaction()" method on IllegalArgumentException thrown path
+    // example test for "validateTransaction()" method on IllegalArgumentException thrown path
     @Test
     public void validateTransactionThrowsIllegalArgument() {
         // write an assertThrows() assertion with IllegalArgumentException
@@ -14,7 +14,7 @@ class CashierTest {
                 , () -> Cashier.validateTransaction("USD", 10));
     }
 
-    // write a test for "validateTransaction()" method on InvalidTransactionAmountException thrown path
+    //TODO write a test for "validateTransaction()" method on InvalidTransactionAmountException thrown path
     @Test
     public void amountIsValidThrowsInvalidAmountException() {
         // write an assertThrows() assertion with InvalidTransactionAmountException

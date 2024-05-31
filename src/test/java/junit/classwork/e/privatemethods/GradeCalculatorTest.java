@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 // test class to test GradeCalculator.class methods
 class GradeCalculatorTest {
 
-    // write a test for computeGrade() method for "path a" (return "Pass")
+    // example test for computeGrade() method for "path a" (return "Pass")
     @Test
     public void computeGradePass() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         // Arrange  / Given
@@ -29,7 +29,7 @@ class GradeCalculatorTest {
         assertEquals("Pass", actualGrade);
     }
 
-    // write a test for computeGrade() method for "path b" (return "Fail")
+    //TODO write a test for computeGrade() method for "path b" (return "Fail")
     @Test
     public void computeGradeFail() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         // Arrange  / Given

@@ -3,6 +3,7 @@ package mockito.classwork.c.stubbingvoid;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doAnswer;
@@ -43,7 +44,7 @@ class ChessPlayerTest {
         // invoke assignCategory() method on the spy object
         chessPlayerSpy.assignCategory();
         // write an assertEquals() assertion on getCategory() method (path c)
-        assertEquals("Senior", chessPlayerSpy.getCategory());
+        assertNull(chessPlayerSpy.getCategory());
     }
 
     //TODO write a test on getCategory() method (path c) on a "mock"

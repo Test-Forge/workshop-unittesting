@@ -3,7 +3,8 @@
 ## Contents
 
 1. <b>[Introduction](#introduction)
-2. [Repo structure](#structure)</b>
+2. [Repo structure](#structure)
+3. [Requirements](#requirements)</b>
 
 ---
 
@@ -68,3 +69,10 @@ the audience for each covered topic.
 The homework package contains just the TODO tasks for the audience for each covered topic.
 Mockito's presentation package contains a package for each covered topic in Mockito's part
 of the .pptx document (a package for every slide from "Mockito's features" part).
+
+---
+
+### Requirements
+
+* Java 22 JDK
+* Maven 3.6.3 or higher
