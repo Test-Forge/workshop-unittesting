@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doCallRealMethod;
@@ -13,8 +12,11 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
+
 // test class for testing ChessPlayer.class methods
 class ChessPlayerTest {
+
+    // creating test doubles without annotations
 
     // example test on getCategory() method on a "spy"
     // without stubbing assignCategory()
@@ -43,7 +45,7 @@ class ChessPlayerTest {
         doNothing().when(chessPlayerSpy).assignCategory();
         // invoke assignCategory() method on the spy object
         chessPlayerSpy.assignCategory();
-        // write an assertEquals() assertion on getCategory() method (path c)
+        // write an assertNull() assertion on getCategory() method (path c)
         assertNull(chessPlayerSpy.getCategory());
     }
 
@@ -103,7 +105,7 @@ class ChessPlayerTest {
         ChessPlayer chessPlayerSpy = spy(chessPlayer);
         // stubbing assignScoreStats() with behavior of assigning wins and points
         doAnswer((chessP) -> {
-            ChessPlayer player = (ChessPlayer)chessP.getMock();
+            ChessPlayer player = (ChessPlayer) chessP.getMock();
             player.setWins(3);
             player.setPoints(9);
             return null;
@@ -205,7 +207,7 @@ class ChessPlayerTest {
         ChessPlayer chessPlayerSpy = spy(chessPlayer);
         // stubbing assignCategory() with behavior of assigning "Player age too low" category
         doAnswer((chessP) -> {
-            ChessPlayer player = (ChessPlayer)chessP.getMock();
+            ChessPlayer player = (ChessPlayer) chessP.getMock();
             player.setCategory("Player age too low");
             return null;
         }).when(chessPlayerSpy).assignCategory();

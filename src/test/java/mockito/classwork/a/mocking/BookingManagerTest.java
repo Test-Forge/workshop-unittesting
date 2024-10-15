@@ -14,6 +14,8 @@ import static org.mockito.Mockito.when;
 // test class to test BookingManager.class methods
 public class BookingManagerTest {
 
+    // creating test doubles without annotations
+
     // declaring the objects we will be working with
     // HotelDao object should be a "mock", (it's methods will be stubbed)
     // and its name must reflect this
