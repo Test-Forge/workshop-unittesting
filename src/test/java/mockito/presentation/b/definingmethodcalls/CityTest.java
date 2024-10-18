@@ -25,7 +25,7 @@ class CityTest {
 
     // stub the getCountry().getName() method declaring with "when()"
     @Test
-    public void definingMethodsWithWhenFail() {
+    void definingMethodsWithWhenFail() {
         when(city.getCountry().getName()).thenReturn("USA");
         // fail miserably
         System.out.println(city.getCountry().getName());
@@ -34,7 +34,7 @@ class CityTest {
     // stub the getCountry().getName() method declaring with "when()"
     // using mocks
     @Test
-    public void definingMethodsWithWhen() {
+    void definingMethodsWithWhen() {
         City cityMock = mock(RETURNS_DEEP_STUBS);
         when(cityMock.getCountry().getName()).thenReturn("USA");
 
@@ -44,7 +44,7 @@ class CityTest {
 
     // stub the getCountry().getName() method declaring with "given()"
     @Test
-    public void definingMethodsWithGivenFail() {
+    void definingMethodsWithGivenFail() {
         given(city.getCountry().getName()).willReturn("China");
         // fail miserably
         System.out.println(city.getCountry().getName());
@@ -53,7 +53,7 @@ class CityTest {
     // stub the getCountry().getName() method declaring with "given()"
     // using mocks
     @Test
-    public void definingMethodsWithGiven() {
+    void definingMethodsWithGiven() {
         City cityMock = mock(RETURNS_DEEP_STUBS);
         given(cityMock.getCountry().getName()).willReturn("China");
 
@@ -63,7 +63,7 @@ class CityTest {
     // stub the getName() method declaring with "when()"
     // using spy()
     @Test
-    public void definingMethodsWithWhenCityName() {
+    void definingMethodsWithWhenCityName() {
         City citySpy = spy(city);
         when(citySpy.getName()).thenReturn("Washington");
 
@@ -73,7 +73,7 @@ class CityTest {
     // stub the getName() method declaring with "given()"
     // using spy()
     @Test
-    public void definingMethodsWithGivenCityName() {
+    void definingMethodsWithGivenCityName() {
         City citySpy = spy(city);
         given(citySpy.getName()).willReturn("Beijing");
 

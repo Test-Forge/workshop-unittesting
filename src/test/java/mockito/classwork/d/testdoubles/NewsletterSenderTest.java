@@ -22,7 +22,7 @@ class NewsletterSenderTest {
 
     // test whether de NewsletterSender class's constructor instantiates a "SubscribersDatabase" object
     @Test
-    public void testConstructorAssignsDatabase() {
+    void testConstructorAssignsDatabase() {
         //TODO create a "mocked" version of the MessagingEngine
         // 'mock' -> a mock is a 'nullable' object of a given type
         MessagingEngine messagingEngineMock = mock();
@@ -38,7 +38,7 @@ class NewsletterSenderTest {
 
     //TODO test "numberOfSubscribers()" method
     @Test
-    public void numberOfSubscribersEqualsThree() {
+    void numberOfSubscribersEqualsThree() {
         // create a "mocked" version of the SubscribersDatabase
         SubscribersDatabase subscribersDatabaseMock = mock();
         // create a "mocked" version of the MessagingEngine
@@ -57,7 +57,7 @@ class NewsletterSenderTest {
 
     //TODO test "sendNewsletter()" method on the exception execution path
     @Test
-    public void zeroSubscribersThrown() {
+    void zeroSubscribersThrown() {
         // create a NewsletterSender instance
         NewsletterSender newsletterSender = new NewsletterSender(new SubscribersDatabase(), new MessagingEngine());
         // create a SPY version of NewsletterSender

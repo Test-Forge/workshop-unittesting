@@ -14,7 +14,7 @@ class AnimalTest {
 
     // example test for default mock()
     @Test
-    public void testAnimalDefault() {
+    void testAnimalDefault() {
         // default mocking behavior
         // all animal's variables will be null or the equivalent of null
         // all animal's methods will return null
@@ -27,7 +27,7 @@ class AnimalTest {
 
     // example test for RETURNS_DEFAULTS
     @Test
-    public void testAnimalReturnDefaults() {
+    void testAnimalReturnDefaults() {
         // identical to the above mock
         // all animal's variables will be null or the equivalent of null
         // all animal's methods will return null
@@ -39,7 +39,7 @@ class AnimalTest {
 
     // example test for RETURNS_SMART_NULLS
     @Test
-    public void testAnimalReturnSmartNulls() {
+    void testAnimalReturnSmartNulls() {
         // Smart null - provides guidance on which methods returns null and require stubbing
         // all animal's variables will be null or the equivalent of null
         // all animal's methods will return null
@@ -53,7 +53,7 @@ class AnimalTest {
 
     // example test for failing to create a spy()
     @Test
-    public void testAnimalFailToCreateSpy() {
+    void testAnimalFailToCreateSpy() {
         // create a spy() version of Animal class
         Animal catSpy = spy();
         // fail miserably
@@ -63,7 +63,7 @@ class AnimalTest {
 
     // example test for failing to create a spy()
     @Test
-    public void testAnimalSpy() {
+    void testAnimalSpy() {
         // create a real instance of Zookeeper class
         ZooKeeper zooKeeper = new ZooKeeper("Bob");
         // create a real instance of Animal class with Zookeeper instance dependency
@@ -80,7 +80,7 @@ class AnimalTest {
 
     // example test for RETURNS_MOCKS
     @Test
-    public void testAnimalReturnMocks() {
+    void testAnimalReturnMocks() {
         // Returns mock - replaces objects with mocked instances to avoid a possible null pointer
         // all animal's primitive variables will be the equivalent of null
         // Object type variables will be mocked
@@ -96,7 +96,7 @@ class AnimalTest {
 
     // example test for RETURNS_DEEP_STUBS
     @Test
-    public void testAnimalReturnDeepStubs() {
+    void testAnimalReturnDeepStubs() {
         // Returns deep stubs - stub chains of method calls within objects for highly specific contexts
         // all animal's primitive variables will be the equivalent of null
         // Object type variables will be mocked

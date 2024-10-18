@@ -31,14 +31,14 @@ class OrdersExampleTest {
         @Test
         @DisplayName("VIP test")
         @Order(1)
-        public void testLeapYear_withLeapYearsData_ReturnsTrue() {
+        void testLeapYear_withLeapYearsData_ReturnsTrue() {
             assertTrue(example.isLeapYear(2024));
         }
 
         @Test
         @DisplayName("NOT VIP test")
         @Order(2)
-        public void testisPerfectSquare_withPerfectSquares_ReturnsTrue() {
+        void testisPerfectSquare_withPerfectSquares_ReturnsTrue() {
             assertTrue(example.isPerfectSquare(25));
         }
 
@@ -51,16 +51,15 @@ class OrdersExampleTest {
         @Test
         @DisplayName("VIP test")
         @Order(1)
-        public void testLeapYear_withOrdinaryYearsData_ReturnsFalse() {
+        void testLeapYear_withOrdinaryYearsData_ReturnsFalse() {
             assertFalse(example.isLeapYear(2023));
         }
 
         @Test
         @DisplayName("NOT VIP test")
         @Order(2)
-        public void testisPerfectSquare_withPerfectSquares_ReturnsTrue() {
+        void testisPerfectSquare_withPerfectSquares_ReturnsTrue() {
             assertFalse(example.isPerfectSquare(5));
         }
-
     }
 }

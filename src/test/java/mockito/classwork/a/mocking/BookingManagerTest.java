@@ -42,7 +42,7 @@ public class BookingManagerTest {
     //TODO write a test for the "checkRoomAvailability(roomName)" method
     // with expected result = true
     @Test
-    public void checkAvailableRoomsTrue() throws SQLException {
+    void checkAvailableRoomsTrue() throws SQLException {
         // write an assertionTrue assertion
         assertTrue(bookingManager.checkRoomAvailability("A"));
     }
@@ -50,9 +50,8 @@ public class BookingManagerTest {
     //TODO write a test for the "checkRoomAvailability(roomName)" method
     // with expected result = false
     @Test
-    public void checkAvailableRoomsFalse() throws SQLException {
+    void checkAvailableRoomsFalse() throws SQLException {
         // write an assertionFalse assertion
         assertFalse(bookingManager.checkRoomAvailability("B"));
     }
-
 }

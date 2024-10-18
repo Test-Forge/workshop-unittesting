@@ -43,7 +43,7 @@ class BookManagerTest {
 
     // test getBookInventoryCount() method stubbing getBooks() method from dependency
     @Test
-    public void testGetBookInventoryCount() {
+    void testGetBookInventoryCount() {
         when(booksRepositoryMock.getBooks()).thenReturn(booksDatabaseSet);
 
         System.out.println("Number of books is: " + bookManager.getBookInventoryCount());
@@ -53,7 +53,7 @@ class BookManagerTest {
     // test getBookInventoryCount() method stubbing getBooks() method from dependency
     // using thenAnswer() method and an implementation of Answer interface
     @Test
-    public void testGetBookInventoryCountWithAnswer() {
+    void testGetBookInventoryCountWithAnswer() {
         when(booksRepositoryMock.getBooks()).thenAnswer(new GetBooks());
 
         System.out.println("Number of books is: " + bookManager.getBookInventoryCount());
@@ -63,7 +63,7 @@ class BookManagerTest {
     // test addBook() method stubbing addBook() method from dependency
     // using thenAnswer() method and an implementation of Answer interface
     @Test
-    public void testGetBookInventoryCountWithAnswers() {
+    void testGetBookInventoryCountWithAnswers() {
         when(booksRepositoryMock.getBooks()).thenAnswer(new GetBooks());
 
         System.out.println("Initial Number of books is: " + bookManager.getBookInventoryCount());

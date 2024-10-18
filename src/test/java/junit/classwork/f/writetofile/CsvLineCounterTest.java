@@ -75,5 +75,4 @@ class CsvLineCounterTest {
         // write an assertEquals() assertion
         assertEquals(13, actualLines);
     }
-
 }

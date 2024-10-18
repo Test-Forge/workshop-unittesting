@@ -38,7 +38,7 @@ class CarShopTest {
 
     // example test for thenReturn() stubbing
     @Test
-    public void testCarsInShopThenReturn() {
+    void testCarsInShopThenReturn() {
 
         //thenReturn() - has a compile time check on data type;
         // also, method behavior is run in background
@@ -49,7 +49,7 @@ class CarShopTest {
 
     // example test for doReturn() stubbing
     @Test
-    public void testCarsInShopDoReturn() {
+    void testCarsInShopDoReturn() {
 
         //doReturn() - checks for data type at runtime;
         // invoked method is not being run
@@ -61,7 +61,7 @@ class CarShopTest {
     // example test for doReturn() stubbing
     // passing an invalid data type
     @Test
-    public void testCarsInShopDoReturnWithInvalidDataType() {
+    void testCarsInShopDoReturnWithInvalidDataType() {
 
         //doReturn() - checks for data type at runtime;
         // invoked method is not being run

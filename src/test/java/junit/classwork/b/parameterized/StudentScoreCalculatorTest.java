@@ -1,6 +1,5 @@
 package junit.classwork.b.parameterized;
 
-import junit.classwork.b.parameterized.StudentScoreCalculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -28,7 +27,7 @@ class StudentScoreCalculatorTest {
     // specify the data source method
     @MethodSource("testValuesAsObjects")
     // add test data as parameters to the test method
-    public void studentScoreCalculatorRegularTestWithObjectsAsValues(int mathScore, int literacyScore, int expectedResult) {
+    void studentScoreCalculatorRegularTestWithObjectsAsValues(int mathScore, int literacyScore, int expectedResult) {
         sc.calculateSATScore(mathScore, literacyScore);
         assertEquals(expectedResult, sc.getSatScore());
     }
@@ -39,7 +38,7 @@ class StudentScoreCalculatorTest {
     // specify the data source method
     @MethodSource("testValuesFromStreams")
     // add test data as parameters to the test method
-    public void studentScoreCalculatorRegularTestWithStreamsAsValues(int mathScore, int literacyScore, int expectedResult) {
+    void studentScoreCalculatorRegularTestWithStreamsAsValues(int mathScore, int literacyScore, int expectedResult) {
         sc.calculateSATScore(mathScore, literacyScore);
         assertEquals(expectedResult, sc.getSatScore());
     }
@@ -81,11 +80,10 @@ class StudentScoreCalculatorTest {
     // specify the data source method
     @MethodSource("secondTestValuesAsObjects")
     // add test data as parameters to the test method
-    public void mediumScoreCalculatorTestWithObjectsAsValues(int mathScore, int historyScore, int informaticsScore, int englishScore, int expectedResult) {
+    void mediumScoreCalculatorTestWithObjectsAsValues(int mathScore, int historyScore, int informaticsScore, int englishScore, int expectedResult) {
         sc.calculateMediumScore(mathScore, historyScore, informaticsScore, englishScore);
         assertEquals(expectedResult, sc.getMediumScore());
     }
-
 
     //TODO write a @ParameterizedTest for calculateMediumScore() method
     // that uses a "method" as source of test data
@@ -97,11 +95,10 @@ class StudentScoreCalculatorTest {
     // specify the data source method
     @MethodSource("secondTestValuesFromStreams")
     // add test data as parameters to the test method
-    public void mediumScoreCalculatorTestWithValuesFromStreams(int mathScore, int historyScore, int informaticsScore, int englishScore, int expectedResult) {
+    void mediumScoreCalculatorTestWithValuesFromStreams(int mathScore, int historyScore, int informaticsScore, int englishScore, int expectedResult) {
         sc.calculateMediumScore(mathScore, historyScore, informaticsScore, englishScore);
         assertEquals(expectedResult, sc.getMediumScore());
     }
-
 
     // method serving as source for test data, returning array objects with test values
     private static Object[] secondTestValuesAsObjects() {

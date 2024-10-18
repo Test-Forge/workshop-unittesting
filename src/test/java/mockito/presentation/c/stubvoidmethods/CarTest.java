@@ -35,7 +35,7 @@ class CarTest {
     // example test on getCategory() method on a "spy"
     // without stubbing assignCategory()
     @Test
-    public void testAssignCategoryWithSpy() throws Exception {
+    void testAssignCategoryWithSpy() throws Exception {
         // invoke assignCategory() method on the spy object
         carSpy.assignCategory();
 
@@ -46,7 +46,7 @@ class CarTest {
     // example test on getCategory() method on a "spy"
     // stubbing assignCategory() with doNothing()
     @Test
-    public void testAssignCategoryWithSpyDoNothing() throws Exception {
+    void testAssignCategoryWithSpyDoNothing() throws Exception {
         // stub assignCategory() method on the spy object
         doNothing().when(carSpy).assignCategory();
 
@@ -57,7 +57,7 @@ class CarTest {
     // example test on getCategory() method on a "mock"
     // without stubbing assignCategory()
     @Test
-    public void testAssignCategoryWithMock() throws Exception {
+    void testAssignCategoryWithMock() throws Exception {
         // invoke assignCategory() method on the mock object
         carMock.assignCategory();
 
@@ -68,7 +68,7 @@ class CarTest {
     // example test on getCategory() method on a "mock"
     // stubbing assignCategory() with doCallRealMethod()
     @Test
-    public void testAssignCategoryWithMockDoNothing() throws Exception {
+    void testAssignCategoryWithMockDoNothing() throws Exception {
         // stub the getPower() method (as we are using a mock)
         when(carMock.getPower()).thenReturn(51);
 
@@ -87,7 +87,7 @@ class CarTest {
     // example test on assignCategory() method on a "mock"
     // stubbing assignCategory() with doThrow()
     @Test
-    public void testAssignCategoryMockException() throws Exception {
+    void testAssignCategoryMockException() throws Exception {
         // stub assignCategory() using doThrow()
         // use 'doThrow' when you want to test whether an exception is thrown
         doThrow(Exception.class).when(carMock).assignCategory();
@@ -98,7 +98,7 @@ class CarTest {
     // example test on getPrice() and getCondition() methods
     // stubbing assignDefaultPriceAndCondition() method's behavior with doAnswer()
     @Test
-    public void testAssignDefaultPriceWithDoAnswer() {
+    void testAssignDefaultPriceWithDoAnswer() {
         // stubbing assignDefaultPriceAndCondition() with behavior of assigning wins and points
         doAnswer((carrSp) -> {
             Car car1 = (Car) carrSp.getMock();
