@@ -1,5 +1,6 @@
 package junit.classwork.b.parameterized;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -10,7 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 // test class for Calculator.class method
-class CalculatorTest extends Calculator{
+class CalculatorTest {
+    Calculator calculator;
+
+    @BeforeEach
+    void setupCalc() {
+        calculator = new Calculator();
+    }
 
     // write a @ParameterizedTest that uses a "Csv file" as source of test data
     // provide valid data for Expected values (path c)
@@ -20,7 +27,7 @@ class CalculatorTest extends Calculator{
     // add test data as parameters to the test method
     void squaredIntegerHappyPath(int sqrResult, int inputData) {
         // write an "assertEquals()" assertion
-        assertEquals(sqrResult, squareInteger(inputData));
+        assertEquals(sqrResult, calculator.squareInteger(inputData));
     }
 
     // write a @ParameterizedTest that uses a "@ValueSource" as source of test data
@@ -31,7 +38,7 @@ class CalculatorTest extends Calculator{
     // add test data as parameters to the test method
     void squaredIntegerInvalidBoundaryTest(int value) {
         // write an "assertThrows()" assertion
-        assertThrows(RuntimeException.class, () -> squareInteger(value));
+        assertThrows(RuntimeException.class, () -> calculator.squareInteger(value));
     }
 
     // write a @ParameterizedTest that uses a "@CsvSource" as source of test data
@@ -47,14 +54,14 @@ class CalculatorTest extends Calculator{
     // add test data as parameters to the test method
     void squareIntegerValidBoundaryTest(int inputValue, int expectedOutput) {
         // write an "assertEquals()" assertion
-        assertEquals(expectedOutput, squareInteger(inputValue));
+        assertEquals(expectedOutput, calculator.squareInteger(inputValue));
     }
 
     //TODO write a test for squareInteger() method with null as parameter (path a)
     @Test
     void squareIntegerValidBoundaryTestNullInput() {
         // write an "assertEquals()" assertion
-        assertEquals(0, squareInteger(null));
+        assertEquals(0, calculator.squareInteger(null));
     }
 
     //TODO write a @ParameterizedTest for cubeInteger() method
@@ -66,7 +73,7 @@ class CalculatorTest extends Calculator{
     // add test data as parameters to the test method
     void cubeIntegerHappyPath(int sqrResult, int inputData) {
         // write an "assertEquals()" assertion
-        assertEquals(sqrResult, cubeInteger(inputData));
+        assertEquals(sqrResult, calculator.cubeInteger(inputData));
     }
 
     //TODO write a @ParameterizedTest for cubeInteger() method
@@ -79,7 +86,7 @@ class CalculatorTest extends Calculator{
     // add test data as parameters to the test method
     void cubeIntegerInvalidBoundaryTest(int value) {
         // write an "assertThrows()" assertion
-        assertThrows(RuntimeException.class, () -> cubeInteger(value));
+        assertThrows(RuntimeException.class, () -> calculator.cubeInteger(value));
     }
 
     //TODO write a @ParameterizedTest for cubeInteger() method
@@ -96,13 +103,13 @@ class CalculatorTest extends Calculator{
     // add test data as parameters to the test method
     void cubeIntegerValidBoundaryTest(int inputValue, int expectedOutput) {
         // write an "assertEquals()" assertion
-        assertEquals(expectedOutput, cubeInteger(inputValue));
+        assertEquals(expectedOutput, calculator.cubeInteger(inputValue));
     }
 
     //TODO write a test for cubeInteger() method with null as parameter (path a)
     @Test
     void cubeIntegerValidBoundaryTestNullInput() {
         // write an "assertEquals()" assertion
-        assertEquals(0, cubeInteger(null));
+        assertEquals(0, calculator.cubeInteger(null));
     }
 }
