@@ -1,5 +1,6 @@
 package junit.classwork.a.basic;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BasicTests {
 
     // declare the instance of class under test
-    private static final Basics BASICS = new Basics();
+    private Basics basicTests;
+
+    // initialize the instance for every test
+    @BeforeEach
+    public void setup() {
+        basicTests = new Basics();
+    }
 
     // test the compare() method for case when 1st number is bigger
     @Test
@@ -22,7 +29,7 @@ class BasicTests {
         int expectedValue = 1;
 
         //when
-        int actualValue = BASICS.compare(a, b);
+        int actualValue = basicTests.compare(a, b);
 
         // then
         assertEquals(expectedValue, actualValue);
@@ -38,7 +45,7 @@ class BasicTests {
         int expectedValue = -1;
 
         //when
-        int actualValue = BASICS.compare(a, b);
+        int actualValue = basicTests.compare(a, b);
 
         // then
         assertEquals(expectedValue, actualValue);
@@ -54,7 +61,7 @@ class BasicTests {
         int expectedValue = 0;
 
         //when
-        int actualValue = BASICS.compare(a, b);
+        int actualValue = basicTests.compare(a, b);
 
         // then
         assertEquals(expectedValue, actualValue);
@@ -65,7 +72,7 @@ class BasicTests {
     @DisplayName("Array max number")
     void arrayMax() {
         int[] array = {5, 8, 3, 9, 1, 6};
-        assertEquals(9, BASICS.max(array));
+        assertEquals(9, basicTests.max(array));
     }
 
     //TODO test the max() method on path a
@@ -73,7 +80,7 @@ class BasicTests {
     @DisplayName("Array max number with empty array")
     void arrayMaxWithZeroLengthArray() {
         int[] array = {};
-        assertEquals(-1, BASICS.max(array));
+        assertEquals(-1, basicTests.max(array));
     }
 
     //TODO test the sortArray() method
@@ -81,7 +88,7 @@ class BasicTests {
     @DisplayName("Array sorted")
     void sortArray() {
         int[] array = {5, 8, 3, 9, 1, 6};
-        BASICS.sortArray(array);
+        basicTests.sortArray(array);
         assertArrayEquals(new int[]{1, 3, 5, 6, 8, 9}, array);
     }
 
@@ -89,6 +96,6 @@ class BasicTests {
     @Test
     void reverseStringTest() {
         String expectedString = "olleH";
-        assertEquals(expectedString, BASICS.reverseString("Hello"));
+        assertEquals(expectedString, basicTests.reverseString("Hello"));
     }
 }
