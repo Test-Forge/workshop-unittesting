@@ -21,7 +21,7 @@ class ChessPlayerTest {
     // example test on getCategory() method on a "spy"
     // without stubbing assignCategory()
     @Test
-    public void testAssignSeniorCategoryWithSpy() throws Exception {
+    void testAssignSeniorCategoryWithSpy() throws Exception {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 30);
         // create a spy version of the object
@@ -35,7 +35,7 @@ class ChessPlayerTest {
     //TODO write a test on getCategory() method on a "spy"
     // stubbing assignCategory() with doNothing()
     @Test
-    public void testAssignSeniorCategorySpyDoNothing() throws Exception {
+    void testAssignSeniorCategorySpyDoNothing() throws Exception {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 30);
         // create a spy version of the object
@@ -52,7 +52,7 @@ class ChessPlayerTest {
     //TODO write a test on getCategory() method (path c) on a "mock"
     // stubbing assignCategory() with doCallRealMethod()
     @Test
-    public void testAssignCategoryMockDoCallRealMethod() throws Exception {
+    void testAssignCategoryMockDoCallRealMethod() throws Exception {
         // create a mock object of the class under test
         ChessPlayer chessPlayerMock = mock();
         // stub the getAge() method
@@ -72,7 +72,7 @@ class ChessPlayerTest {
     // example test on getCategory() method on a "mock"
     // without stubbing assignCategory()
     @Test
-    public void testAssignCategoryMock() throws Exception {
+    void testAssignCategoryMock() throws Exception {
         // create a mock object of the class under test
         ChessPlayer chessPlayerMock = mock();
         // invoke assignCategory() method on the mock object
@@ -84,7 +84,7 @@ class ChessPlayerTest {
     //TODO write a test on assignCategory() method (path a) on a "mock"
     // stubbing assignCategory() with doThrow()
     @Test
-    public void testAssignCategoryMockException() throws Exception {
+    void testAssignCategoryMockException() throws Exception {
         // create a mock object of the class under test
         ChessPlayer chessPlayerMock = mock();
         // stub assignCategory() using doThrow()
@@ -98,7 +98,7 @@ class ChessPlayerTest {
     // stubbing assignScoreStats() method's behavior with
     // our own using doAnswer()
     @Test
-    public void testAssignScoreStatsWithDoAnswer() {
+    void testAssignScoreStatsWithDoAnswer() {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 30);
         // create a spy version of the object
@@ -120,7 +120,7 @@ class ChessPlayerTest {
 
     //TODO write a test on getCategory() method for "path b" using a "spy"
     @Test
-    public void testAssignUnderEighteenCategoryWithSpy() throws Exception {
+    void testAssignUnderEighteenCategoryWithSpy() throws Exception {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 10);
         // create a spy version of the object
@@ -133,7 +133,7 @@ class ChessPlayerTest {
 
     // Example test on getCategory() method for "path b" using a "mock"
     @Test
-    public void testAssignUnderEighteenCategoryWithMock() throws Exception {
+    void testAssignUnderEighteenCategoryWithMock() throws Exception {
         // create a mock object of the class under test
         ChessPlayer chessPlayerMock = mock();
         // stub the getAge() method
@@ -155,7 +155,7 @@ class ChessPlayerTest {
     // P.S. use a ChessPlayer object with data that would not cause
     // any exceptions under normal conditions (without stubbing)
     @Test
-    public void testAssignCategoryThrowsExceptionWithSpyDoThrow() throws Exception {
+    void testAssignCategoryThrowsExceptionWithSpyDoThrow() throws Exception {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 30);
         // create a spy version of the object
@@ -170,7 +170,7 @@ class ChessPlayerTest {
     //TODO write a test on assignCategory() method for "path a" on a "spy"
     // without stubbing assignCategory()
     @Test
-    public void testAssignCategoryThrowsExceptionWithSpy() {
+    void testAssignCategoryThrowsExceptionWithSpy() {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 4);
         // create a spy version of the object
@@ -183,7 +183,7 @@ class ChessPlayerTest {
     // write a test on getWins() and getPoints() method
     // invoking assignScoreStats()
     @Test
-    public void testAssignScoreStats() {
+    void testAssignScoreStats() {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 30);
         // create a spy version of the object
@@ -200,7 +200,7 @@ class ChessPlayerTest {
     // write a test on getCategory() method
     // stubbing assignCategory() method's behavior with doAnswer()
     @Test
-    public void getCategoryAssignedWithDoAnswer() throws Exception {
+    void getCategoryAssignedWithDoAnswer() throws Exception {
         // create a class under test object
         ChessPlayer chessPlayer = new ChessPlayer("Magnus", 30);
         // create a spy version of the object

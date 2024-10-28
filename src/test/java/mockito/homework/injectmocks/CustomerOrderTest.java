@@ -28,7 +28,7 @@ class CustomerOrderTest {
 
     //TODO write a test for vegetarianBreakfast() method
     @Test
-    public void testVegetarianBreakfastReturnsValidList() {
+    void testVegetarianBreakfastReturnsValidList() {
         List<String> expectedList = Arrays.asList("Apple", "Beans", "Hash brown", "Toast");
 
         assertEquals(expectedList, customerOrder.vegetarianBreakfast());
@@ -36,7 +36,7 @@ class CustomerOrderTest {
 
     //TODO write a test for meatBreakfast() method
     @Test
-    public void testMeatBreakfastReturnsValidList() {
+    void testMeatBreakfastReturnsValidList() {
         List<String> expectedList = Arrays.asList("Apple", "Sausages", "Bacon", "Toast");
 
         assertEquals(expectedList, customerOrder.meatBreakfast());
@@ -44,7 +44,7 @@ class CustomerOrderTest {
 
     //TODO write a test for vegetarianDinner() method
     @Test
-    public void testVegetarianDinnerReturnsValidList() {
+    void testVegetarianDinnerReturnsValidList() {
         List<String> expectedList = Arrays.asList("Garlic bread", "Vegetable Lasagne", "Chocolate Brownie");
 
         assertEquals(expectedList, customerOrder.vegetarianDinner());
@@ -52,7 +52,7 @@ class CustomerOrderTest {
 
     //TODO write a test for meatDinner() method
     @Test
-    public void testMeatDinnerReturnsValidList() {
+    void testMeatDinnerReturnsValidList() {
         List<String> expectedList = Arrays.asList("Calamari", "Roast Chicken", "Sticky toffee pudding");
 
         assertEquals(expectedList, customerOrder.meatDinner());

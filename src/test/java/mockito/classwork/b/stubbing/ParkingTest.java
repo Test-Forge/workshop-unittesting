@@ -9,7 +9,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.HashMap;
 import java.util.Map;
 
-import static mockito.classwork.b.stubbing.Vehicle.VehicleType.*;
+import static mockito.classwork.b.stubbing.Vehicle.VehicleType.COMMERCIAL;
+import static mockito.classwork.b.stubbing.Vehicle.VehicleType.MOTORCYCLE;
+import static mockito.classwork.b.stubbing.Vehicle.VehicleType.PASSENGER_CAR;
+import static mockito.classwork.b.stubbing.Vehicle.VehicleType.SUV;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyMap;
@@ -40,7 +43,7 @@ class ParkingTest {
     // TODO write a test for getParkedVehiclesByType() method (path a)
     //  using created test data (stub the internal method call)
     @Test
-    public void testGetParkedVehiclesByType() {
+    void testGetParkedVehiclesByType() {
         when(parkingSpy.getParkedVehicles()).thenReturn(parkedVehicles);
 
         assertEquals(99, parkingSpy.getParkedVehiclesByType(PASSENGER_CAR));
@@ -49,7 +52,7 @@ class ParkingTest {
     // TODO write a test for getParkedVehiclesByType() method (path b)
     //  using an argument matcher
     @Test
-    public void testGetParkedVehiclesByTypeWithMatcher() {
+    void testGetParkedVehiclesByTypeWithMatcher() {
         when(parkingSpy.getParkedVehicles()).thenReturn(anyMap());
 
         assertThrows(MissingParkedVehiclesOfGivenTypeException.class,
@@ -59,7 +62,7 @@ class ParkingTest {
     // TODO write a test for getTotalAvailableSpaces() method
     //  using stubs on called methods
     @Test
-    public void testGetTotalAvailableSpaces() {
+    void testGetTotalAvailableSpaces() {
         when(parkingSpy.getParkedVehicles()).thenReturn(parkedVehicles);
 
         when(parkingSpy.getParkedVehiclesByType(MOTORCYCLE)).thenReturn(100);
@@ -73,7 +76,7 @@ class ParkingTest {
     // TODO write a test for getTotalAvailableSpaces() method
     //  validate all internal method calls where made
     @Test
-    public void testGetTotalAvailableSpacesCallsMethods() {
+    void testGetTotalAvailableSpacesCallsMethods() {
         when(parkingSpy.getParkedVehicles()).thenReturn(parkedVehicles);
         parkingSpy.getTotalAvailableSpaces();
 

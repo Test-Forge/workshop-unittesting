@@ -1,6 +1,7 @@
 package junit.classwork.g.assertj;
 
 import org.assertj.core.api.AbstractAssert;
+
 // custom AssertJ matcher (assertion method) class
 // must extend AbstractAssert class from AssertJ
 // this class itself and the "object under assertion" class as generic parameters
@@ -31,7 +32,6 @@ public class PlayerAssert extends AbstractAssert<PlayerAssert, Players> {
         if (!actual.getName().equals(expectedName)) {
             failWithMessage("Expected name: " + expectedName + ", but was: " + actual.getName());
         }
-
         return this;
     }
 
@@ -44,10 +44,8 @@ public class PlayerAssert extends AbstractAssert<PlayerAssert, Players> {
         if (!(actual.getAge() == expectedAge)) {
             failWithMessage("Expected age: " + expectedAge + ", but was: " + actual.getAge());
         }
-
         return this;
     }
-
 
     //TODO custom assertion hasSport()
     // must return PlayerAssert class instance
@@ -60,7 +58,6 @@ public class PlayerAssert extends AbstractAssert<PlayerAssert, Players> {
         if (!actual.getSport().equals(expectedSport)) {
             failWithMessage("Expected sport: " + expectedSport + ", but was: " + actual.getSport());
         }
-
         return this;
     }
 }

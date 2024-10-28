@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 // test class to test ListTransformer.class methods
 class ListTransformerTest {
 
@@ -26,7 +26,7 @@ class ListTransformerTest {
 
     // write a test for containsLetter() method using both JUNIT and ASSERTJ assertions
     @Test
-    public void containsLetterTest() {
+    void containsLetterTest() {
         // create test data for methods parameters
         // List of Items
         Item a = new Item(10, "raspberry");
@@ -57,7 +57,7 @@ class ListTransformerTest {
 
     // write a test for containsLetterAndSort() method using both JUNIT and ASSERTJ assertions
     @Test
-    public void containsLetterAndSortTest() {
+    void containsLetterAndSortTest() {
         // create test data for methods parameters
         // List of Items
         Item a = new Item(10, "raspberry");
@@ -85,5 +85,4 @@ class ListTransformerTest {
                 // or using containsExactlyElementsOf()
                 .containsExactlyElementsOf(expected);
     }
-
 }

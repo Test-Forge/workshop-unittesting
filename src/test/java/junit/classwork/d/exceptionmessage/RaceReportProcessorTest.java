@@ -57,5 +57,4 @@ class RaceReportProcessorTest {
         // write an assertEquals() assertion on exception's message
         assertEquals("src\\main\\resources\\exception_testing_data\\drivers\\droiver.csv (The system cannot find the file specified)", exception.getMessage());
     }
-
 }

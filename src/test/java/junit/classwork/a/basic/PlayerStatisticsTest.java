@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 // test class to test PlayerStatistics.class methods
 class PlayerStatisticsTest {
 
@@ -32,7 +33,7 @@ class PlayerStatisticsTest {
     // create a test object of the Player.class with the same name as already initialized
     // write an assertEquals assertion for the 2 objects names
     @Test
-    public void playerNameEqual(){
+    void playerNameEqual() {
         System.out.println("test 1");
         // create a test object
         Player player2 = new Player("Patrick", 25);
@@ -44,7 +45,7 @@ class PlayerStatisticsTest {
     // with a different name to already initialized one
     // write an assertNotEquals() assertion for the 2 objects names
     @Test
-    public void playerNamesNotEqual(){
+    void playerNamesNotEqual() {
         System.out.println("test 2");
         // create a test object
         Player player2 = new Player("Kalvin", 25);
@@ -55,7 +56,7 @@ class PlayerStatisticsTest {
 
     // test the "getYoungerPlayer()" method with an "asserSame()" assertion
     @Test
-    public void youngerPlayerSame(){
+    void youngerPlayerSame() {
         System.out.println("test 3");
         // create a test object of Player
         Player player2 = new Player("Patrick", 25);
@@ -66,7 +67,7 @@ class PlayerStatisticsTest {
 
     //TODO write a test with an "assertNotSame()" assertion
     @Test
-    public void youngerPlayerNotSame(){
+    void youngerPlayerNotSame() {
         System.out.println("test 3");
         // create a test object of Player
         Player player2 = new Player("Parick", 27);
@@ -81,7 +82,7 @@ class PlayerStatisticsTest {
     // using the @RepeatedTest annotation,
     // customize it with number of runs and accepted fails count
     @RepeatedTest(value = 8, failureThreshold = 2)
-    public void underThirtyTrue(){
+    void underThirtyTrue() {
         System.out.println("test 4");
         // write an "assertTrue()" assertion
         assertTrue(statisticsOfPatrickUnderThirty.underThirty());
@@ -90,7 +91,7 @@ class PlayerStatisticsTest {
     //TODO write a test for underThirty() method for return false path
     // create a test object of the Player.class
     @Test
-    public void underThirtyFalse(){
+    void underThirtyFalse() {
         System.out.println("test 5");
         // create a test object of Player with age over 30
         Player player1 = new Player("Patrick", 37);
@@ -100,10 +101,9 @@ class PlayerStatisticsTest {
         assertFalse(statistics.underThirty());
     }
 
-
     // write a test for "createCsvRecord()" method for return null path
     @Test
-    public void csvReportNull(){
+    void csvReportNull() {
         System.out.println("test 6");
         // create a test object of the PlayerStatistics.class with a player with 0 games played
         PlayerStatistics statistics = new PlayerStatistics(playerPatrickUnderThirty, 0, 0);
@@ -113,7 +113,7 @@ class PlayerStatisticsTest {
 
     //TODO write a test for "createCsvRecord()" method for return NOT null path
     @Test
-    public void csvReportNotNull(){
+    void csvReportNotNull() {
         System.out.println("test 7");
         // create a test object of the PlayerStatistics.class with a player with at least 1 game played
         PlayerStatistics statistics = new PlayerStatistics(playerPatrickUnderThirty, 3, 3);
@@ -121,10 +121,9 @@ class PlayerStatisticsTest {
         assertNotNull(statistics.createCsvRecord());
     }
 
-
     // write a test for "createCsvRecord()" method for return NOT null path, validating the return
     @Test
-    public void getCsvStatsRecord(){
+    void getCsvStatsRecord() {
         System.out.println("test 8");
         // create a test object of the PlayerStatistics.class with a player with at least 1 game played
         PlayerStatistics statistics = new PlayerStatistics(playerPatrickUnderThirty, 4, 8);
@@ -136,12 +135,11 @@ class PlayerStatisticsTest {
 
     //TODO write a test on Player's "getAge()" method with "assertEquals()"
     @Test
-    public void playerConstructorAgeAssigned(){
+    void playerConstructorAgeAssigned() {
         System.out.println("test 9");
         // create a test object of the Player.class
         Player player1 = new Player("Stuart", 30);
         // write an "assertEquals()" assertion on the assigned age
         assertEquals(30, player1.getAge());
     }
-
 }

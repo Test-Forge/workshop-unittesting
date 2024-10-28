@@ -25,7 +25,7 @@ class OrderServiceTest {
     // TODO create a test for placeOrder() method validating that objects
     //  of expected types (Pizza and Delivery) where created and send to storeOrder() method
     @Test
-    public void test_placeOrder_withValidData_SendsObjectsOfValidTypes() {
+    void test_placeOrder_withValidData_SendsObjectsOfValidTypes() {
         // ArgumentCaptor initialisation
         ArgumentCaptor<Order> capturedOrder = ArgumentCaptor.forClass(Order.class);
 
@@ -48,7 +48,7 @@ class OrderServiceTest {
     // TODO create a test for placeOrder() method validating that an object
     //  containing expected data was sent to storage
     @Test
-    public void test_placeOrder_withValidData_SendsValidDataToStorage() {
+    void test_placeOrder_withValidData_SendsValidDataToStorage() {
         // ArgumentCaptor initialisation
         ArgumentCaptor<Order> capturedOrder = ArgumentCaptor.forClass(Order.class);
 

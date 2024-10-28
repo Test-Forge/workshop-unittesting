@@ -26,7 +26,7 @@ class PlayersStatisticsTest {
     // create a test object of the Player.class with the same name as already initialized
     // write an isEqualTo assertion for the 2 objects names
     @Test
-    public void playerNameEqual() {
+    void playerNameEqual() {
         Players player2 = new Players("Patrick", 25, "Football");
         assertThat(player2.getName())
                 .as("Players should have the same name")
@@ -37,15 +37,14 @@ class PlayersStatisticsTest {
     // with a different name to already initialized one
     // write an isNotEqualTo assertion for the 2 objects names
     @Test
-    public void playerNamesNotEqual() {
+    void playerNamesNotEqual() {
         Players player2 = new Players("Kalvin", 25, "Football");
         PlayerAssert.assertThat(player2).isNotEqualTo(playerPatrickUnderThirty);
     }
 
-
     //TODO test the "getYoungerPlayer()" method with an "isSameAs()" assertion
     @Test
-    public void youngerPlayerSame() {
+    void youngerPlayerSame() {
         Players player2 = new Players("Patrick", 25, "Football");
         PlayerAssert.assertThat(PlayersStatistics.getYoungerPlayer(playerPatrickUnderThirty, player2))
                 .isSameAs(player2);
@@ -53,23 +52,22 @@ class PlayersStatisticsTest {
 
     //TODO write a test with an "isNotSameAs()" assertion
     @Test
-    public void playersNotSame() {
+    void playersNotSame() {
         Players player2 = new Players("Patrick", 27, "Football");
         PlayerAssert.assertThat(playerPatrickUnderThirty)
                 .isEqualTo(player2)
                 .isNotSameAs(player2);
     }
 
-
     // write a test for underThirty() method with initialized class instance (the return true path)
     @Test
-    public void underThirtyTrue() {
+    void underThirtyTrue() {
         assertThat(statisticsOfPatrickUnderThirty.underThirty()).isTrue();
     }
 
     //TODO write a test for underThirty() method for return false path
     @Test
-    public void underThirtyFalse() {
+    void underThirtyFalse() {
         Players player1 = new Players("Patrick", 37, "Football");
         PlayersStatistics statistics = new PlayersStatistics(player1, 3, 3);
         assertThat(statistics.underThirty()).isFalse();
@@ -77,21 +75,21 @@ class PlayersStatisticsTest {
 
     //TODO write a test for "createCsvRecord()" method for return null path
     @Test
-    public void csvReportNull() {
+    void csvReportNull() {
         PlayersStatistics statistics = new PlayersStatistics(playerPatrickUnderThirty, 0, 0);
         assertThat(statistics.createCsvRecord()).isNull();
     }
 
     // write a test for "createCsvRecord()" method for return NOT null path
     @Test
-    public void csvReportNotNull() {
+    void csvReportNotNull() {
         PlayersStatistics statistics = new PlayersStatistics(playerPatrickUnderThirty, 3, 3);
         assertThat(statistics.createCsvRecord()).isNotNull();
     }
 
     // write a test for "createCsvRecord()" method for return NOT null path, validating the return
     @Test
-    public void getCsvStatsRecord() {
+    void getCsvStatsRecord() {
         PlayersStatistics statistics = new PlayersStatistics(playerPatrickUnderThirty, 4, 8);
         Double[] expectedArray = {2d, 0.5};
         assertThat(statistics.createCsvRecord()).isEqualTo(expectedArray);
@@ -100,7 +98,7 @@ class PlayersStatisticsTest {
     //TODO write a test on Player's "getAge()" method
     // using isEqualTo() assertion
     @Test
-    public void playerConstructorAgeAssigned() {
+    void playerConstructorAgeAssigned() {
         Players player1 = new Players("Stuart", 30, "Football");
         assertThat(player1.getAge()).isEqualTo(30);
     }
@@ -108,7 +106,7 @@ class PlayersStatisticsTest {
     // write a test on Player's "getName()" method
     // Using Custom AssertJ Matchers (hasName)
     @Test
-    public void playerNameEqualCustom() {
+    void playerNameEqualCustom() {
         Players player2 = new Players("Patrick", 25, "Football");
         PlayerAssert.assertThat(player2).hasName(playerPatrickUnderThirty.getName());
     }
@@ -116,36 +114,33 @@ class PlayersStatisticsTest {
     //TODO write a test on Player's "getAge()" method
     // Using Custom AssertJ Matchers (hasAge)
     @Test
-    public void playerAgeEqualCustom() {
+    void playerAgeEqualCustom() {
         Players player2 = new Players("Patrick", 27, "Football");
         PlayerAssert.assertThat(player2).hasAge(playerPatrickUnderThirty.getAge());
     }
 
-
     //TODO write a test on Player's "getAge()" and getName() methods
     // Using Custom AssertJ Matchers hasAge() and hasName()
     @Test
-    public void playerAgeEqualAndNameEqualCustom() {
+    void playerAgeEqualAndNameEqualCustom() {
         Players player2 = new Players("Patrick", 27, "Football");
         PlayerAssert.assertThat(player2)
                 .hasAge(playerPatrickUnderThirty.getAge())
                 .hasName(playerPatrickUnderThirty.getName());
     }
 
-
     //TODO write a test on Player's "getSport()" method
     // Using Custom AssertJ Matchers (hasSport)
     @Test
-    public void playerSportEqualCustom() {
+    void playerSportEqualCustom() {
         Players player2 = new Players("Patrick", 25, "Football");
         PlayerAssert.assertThat(player2).hasSport(playerPatrickUnderThirty.getSport());
     }
 
-
     //TODO write a test on Player's "getAge()", "getName()" and "getSport" methods
     // Using Custom AssertJ Matchers hasAge(), hasName() and hasSport()
     @Test
-    public void playerAgeNameSportEqualCustom() {
+    void playerAgeNameSportEqualCustom() {
         Players player2 = new Players("Patrick", 27, "Football");
         PlayerAssert.assertThat(player2)
                 .hasAge(playerPatrickUnderThirty.getAge())
