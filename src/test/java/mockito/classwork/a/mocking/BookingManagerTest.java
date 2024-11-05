@@ -12,7 +12,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 // test class to test BookingManager.class methods
-public class BookingManagerTest {
+class BookingManagerTest {
 
     // creating test doubles without annotations
 

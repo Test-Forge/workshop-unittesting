@@ -2,6 +2,7 @@ package mockito.presentation.d.stubmethodswithreturntype;
 
 import java.util.HashMap;
 import java.util.Map;
+
 // class under test for doReturn() vs thenReturn()
 public class CarShop {
 
@@ -24,7 +25,7 @@ public class CarShop {
         //calls a database
         System.out.println("Getting cars in stock");
         Map<String, Integer> carsInStock = new HashMap<String, Integer>();
-        if(true) {
+        if (true) {
             throw new RuntimeException("thrown exception)");
         }
         return carsInStock;

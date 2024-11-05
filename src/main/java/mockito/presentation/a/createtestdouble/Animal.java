@@ -1,4 +1,5 @@
 package mockito.presentation.a.createtestdouble;
+
 // class under test
 public class Animal {
 

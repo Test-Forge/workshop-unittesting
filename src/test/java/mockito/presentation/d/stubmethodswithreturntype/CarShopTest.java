@@ -3,12 +3,10 @@ package mockito.presentation.d.stubmethodswithreturntype;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
@@ -20,7 +18,6 @@ class CarShopTest {
     CarShop carShopSpy;
     Map<String, Integer> carsInStock;
     List<String> cars;
-
 
     @BeforeEach
     public void setup() {
@@ -69,6 +66,4 @@ class CarShopTest {
 
         System.out.println(carShopSpy.getStockForBrand("Jaguar"));
     }
-
-
 }

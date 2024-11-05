@@ -21,8 +21,8 @@ public class TrainBarriers {
     }
 
     // method under test
-    public void passengerEntry(int passengerId){
-        if(passengerIsEligible(passengerId)) {
+    public void passengerEntry(int passengerId) {
+        if (passengerIsEligible(passengerId)) {
             passengersOnBoard.add(passengerId);
             repository.registerPassengerOnTrain(passengerId);
             emailService.notifyPassenger(passengerId);

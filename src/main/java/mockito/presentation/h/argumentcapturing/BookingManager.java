@@ -1,8 +1,10 @@
 package mockito.presentation.h.argumentcapturing;
+
 // class under test
 public class BookingManager {
 
     private BookingPersister bookingPersister;
+
     public BookingManager(BookingPersister bookingPersister) {
         this.bookingPersister = bookingPersister;
     }

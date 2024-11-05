@@ -3,6 +3,7 @@ package mockito.homework.injectmocks;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+
 // class under test
 public class CustomerOrder {
 

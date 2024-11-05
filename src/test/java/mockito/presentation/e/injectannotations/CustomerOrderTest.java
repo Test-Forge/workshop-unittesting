@@ -6,7 +6,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
@@ -63,5 +62,4 @@ class CustomerOrderTest {
 
         System.out.println(customerOrderSpy.sayHello());
     }
-
 }

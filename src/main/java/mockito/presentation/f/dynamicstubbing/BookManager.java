@@ -1,6 +1,7 @@
 package mockito.presentation.f.dynamicstubbing;
 
 import java.util.Set;
+
 // class under test
 public class BookManager {
 
@@ -13,14 +14,14 @@ public class BookManager {
     }
 
     // method under test
-    public Integer getBookInventoryCount(){
+    public Integer getBookInventoryCount() {
 
         Set<String> allBooks = booksRepository.getBooks();
         return allBooks.size();
     }
 
     // method under test
-    public void addBook(String bookName){
+    public void addBook(String bookName) {
         this.booksRepository.addBook(bookName);
     }
 }
