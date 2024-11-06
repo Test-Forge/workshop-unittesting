@@ -18,10 +18,9 @@ public class HotelDao {
         Statement statement = conn.createStatement();
         ResultSet rs;
         rs = statement.executeQuery("SELECT * FROM ROOMS WHERE AVAILABLE like '1'");
-        while(rs.next()){
+        while (rs.next()) {
             availableRooms.add(rs.getString("Room name"));
         }
         return availableRooms;
     }
 }
-

@@ -3,7 +3,6 @@ package mockito.classwork.b.stubbing;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Parking {
 
     private final int TOTAL_PARKING_CAPACITY = 5000;

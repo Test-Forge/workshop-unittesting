@@ -1,6 +1,7 @@
 package mockito.presentation.i.argumentmatchers;
 
 import java.util.List;
+
 // class under test
 public class BookingService {
 
@@ -12,7 +13,7 @@ public class BookingService {
     }
 
     // method under test
-    public boolean buyTicket(String showId){
+    public boolean buyTicket(String showId) {
         String ticketShowId = createTicketShowId(showId);
         Ticket ticket = new Ticket(ticketShowId);
         return bookSeat(ticket);
@@ -22,11 +23,10 @@ public class BookingService {
     public boolean bookSeat(Ticket ticket) {
         List<String> availableSeatsForShow =
                 bookingRepository.getSeats(ticket.getShowFromId());
-        if(availableSeatsForShow.contains(ticket.getShowId())){
+        if (availableSeatsForShow.contains(ticket.getShowId())) {
             //update database
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

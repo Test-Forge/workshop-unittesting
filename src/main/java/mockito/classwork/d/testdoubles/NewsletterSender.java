@@ -20,10 +20,10 @@ public class NewsletterSender {
     // Method to be tested
     // The method call form the external dependency must be stubbed
     // This method has 2 paths of execution
-    public void sendNewsletter(String subject){
+    public void sendNewsletter(String subject) {
         List<String> emails = subscribersDatabase.getSubscribers();
 
-        if(numberOfSubscribers() == 0){
+        if (numberOfSubscribers() == 0) {
             throw new ZeroSubscribersException();
         }
         messagingEngine.sendEmail(subject, emails);
@@ -31,7 +31,7 @@ public class NewsletterSender {
 
     // Method to be tested
     // current method uses a method from an external dependency
-    public int numberOfSubscribers(){
+    public int numberOfSubscribers() {
         return subscribersDatabase.getSubscribers().size();
     }
 

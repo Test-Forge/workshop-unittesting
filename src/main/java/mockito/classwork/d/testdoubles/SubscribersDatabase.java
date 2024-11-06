@@ -2,6 +2,7 @@ package mockito.classwork.d.testdoubles;
 
 import java.util.ArrayList;
 import java.util.List;
+
 // external dependency for NewsletterSender.class
 public class SubscribersDatabase {
 

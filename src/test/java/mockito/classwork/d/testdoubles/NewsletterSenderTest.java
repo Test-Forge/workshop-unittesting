@@ -29,7 +29,7 @@ class NewsletterSenderTest {
         //TODO create an actual object of SubscribersDatabase
         SubscribersDatabase subscribersDatabase = new SubscribersDatabase();
         //TODO create an actual object of NewsLetterSender
-        // passing the SubscribersDatabase object and the MessagingEngine mock
+        // passing the SubscribersDatabase objecot and the MessagingEngine mock
         NewsletterSender newsletterSender = new NewsletterSender(subscribersDatabase, messagingEngineMock);
         //TODO validate that SubscribersDatabase object created in the test
         // is the same as the assigned one in NewsLetterSender
@@ -70,5 +70,4 @@ class NewsletterSenderTest {
             newsletterSenderSpy.sendNewsletter("SUBJECT");
         });
     }
-
 }

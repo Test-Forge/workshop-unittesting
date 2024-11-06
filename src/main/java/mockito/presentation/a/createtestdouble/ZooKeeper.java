@@ -1,4 +1,5 @@
 package mockito.presentation.a.createtestdouble;
+
 // external dependency for Animal.class
 public class ZooKeeper {
 

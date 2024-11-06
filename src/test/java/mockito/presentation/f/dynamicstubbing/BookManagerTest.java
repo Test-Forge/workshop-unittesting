@@ -1,11 +1,9 @@
 package mockito.presentation.f.dynamicstubbing;
 
-import mockito.presentation.c.stubvoidmethods.Car;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -14,9 +12,6 @@ import org.mockito.stubbing.Answer;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 // test class to test BookManager.class methods
@@ -105,5 +100,4 @@ class BookManagerTest {
             return book;
         }
     }
-
 }
